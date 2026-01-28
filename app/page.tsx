@@ -31,32 +31,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1>Fast Refresh Demo</h1>
-      <p>
-        Fast Refresh is a Next.js feature that gives you instantaneous feedback
-        on edits made to your React components, without ever losing component
-        state.
-      </p>
-      <hr className={styles.hr} />
-      <div>
-        <p>
-          Auto incrementing value. The counter won't reset after edits or if
-          there are errors.
-        </p>
-        <p>Current value: {count}</p>
-      </div>
-      <hr className={styles.hr} />
-      <div>
-        <p>Component with state.</p>
-        <ClickCount />
-      </div>
-      <hr className={styles.hr} />
-      <div>
-        <p>
-          Edit the JSX in <code>app/page.tsx</code> and fast refresh will
-          update the result here.
-        </p>
-        <Button onClick={throwError}>throw error</Button>
-      </div>
     </main>
   )
 }

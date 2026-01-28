@@ -1,3 +1,5 @@
+'use client'
+
 import { useCallback, useEffect, useState } from 'react'
 import Button from '../components/Button'
 import ClickCount from '../components/ClickCount'
@@ -10,7 +12,7 @@ function throwError() {
   )
 }
 
-function Home() {
+export default function Home() {
   const [count, setCount] = useState(0)
   const increment = useCallback(() => {
     setCount((v) => v + 1)
@@ -50,22 +52,11 @@ function Home() {
       <hr className={styles.hr} />
       <div>
         <p>
-          The button below will throw 2 errors. You'll see the error overlay to
-          let you know about the errors but it won't break the page or reset
-          your state.
+          Edit the JSX in <code>app/page.tsx</code> and fast refresh will
+          update the result here.
         </p>
-        <Button
-          onClick={(e) => {
-            setTimeout(() => document.parentNode(), 0)
-            throwError()
-          }}
-        >
-          Throw an Error
-        </Button>
+        <Button onClick={throwError}>throw error</Button>
       </div>
-      <hr className={styles.hr} />
     </main>
   )
 }
-
-export default Home

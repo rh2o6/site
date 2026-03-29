@@ -3,40 +3,28 @@ import Link from 'next/link';
 
 export default function Header() {
     return (
-        <header className="bg-blue-600 ">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <div className="flex justify-between items-center">
+        <header className="bg-blue-600 text-white">
+            <div className="w-full px-2 sm:px-4 md:px-6 py-4">
+                <div className="flex justify-between items-center w-full">
                     
-                    {/* Logo / Home Button */}
-                    <div className="flex-shrink-0">
-                        <Link href="/" className="text-2xl font-bold text-gray-900">
-                            Home
-                        </Link>
-                    </div>
+                 
+                    <Link href="/" className="text-2xl font-bold">
+                        Home
+                    </Link>
 
-                    {/* Navigation */}
-                    <nav className="hidden md:block">
-                        <ul className="flex space-x-8">
-                            <li>
-                                <Link href="/" className="text-gray-700 hover:text-gray-900">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/about" className="text-gray-700 hover:text-gray-900">
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services" className="text-gray-700 hover:text-gray-900">
-                                    Services
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contact" className="text-gray-700 hover:text-gray-900">
-                                    Contact
-                                </Link>
-                            </li>
+                    <nav>
+                        <ul className="flex gap-4 sm:gap-6 md:gap-8">
+                            <li><Link href="/professional" className="hover:text-blue-200 transition">Professional Experience</Link></li>
+                            <li><Link href="/ec" className="hover:text-blue-200 transition">Extracurriculars & Community Involvement</Link></li>
+                            <li><Link href="/contact" className="hover:text-blue-200 transition">Contact</Link></li>
+                            <li><Link 
+  href="/resume.pdf" 
+  target="_blank" 
+  download="My_Resume.pdf"
+  className="hover:text-blue-200 transition"
+>
+  Resume
+</Link></li>
                         </ul>
                     </nav>
 

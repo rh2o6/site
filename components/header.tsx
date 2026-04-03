@@ -25,6 +25,8 @@ export default function Header() {
 >
   Resume
 </Link></li>
+                        <li><Link href="/projects" className="hover:text-blue-200 transition">Projects</Link></li>
+                        <li><Link href="/goals" className="hover:text-blue-200 transition">Goals</Link></li>
                         </ul>
                     </nav>
 

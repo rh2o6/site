@@ -5,25 +5,25 @@ import Image from 'next/image';
 export const Landing: React.FC<LandingProps> = ({}) => {
     return (
 
-        <div className="landing grid grid-cols-2 min-h-screen gap-4">
+        <div className="landing grid grid-cols-1 md:grid-cols-2 min-h-screen gap-8 px-4 md:px-8 py-8">
 
             
   <div className="flex justify-center items-center flex-col">
 
-  <div className="max-w-[800px]">
+  <div className="w-full max-w-sm md:max-w-md">
     <Image
       src="/images/unnamed.png"
       alt="Portfolio"
       width={400}
       height={400}
-      className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 object-cover"
+      className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 object-cover w-full h-auto"
       priority
     />
   </div>
 
   <div className="mt-4 text-center">
-    <h1 className="text-3xl font-bold mb-2">Robert Hollander</h1>
-    <p className="text-lg text-gray-600">Computer Science Student | Database Administrator | Community Builder</p>
+    <h1 className="text-2xl md:text-3xl font-bold mb-2">Robert Hollander</h1>
+    <p className="text-base md:text-lg text-gray-600">Computer Science Student | Database Administrator | Community Builder</p>
     <div className="mt-6 flex items-center gap-3 justify-center">
        <p className="text-sm font-semibold text-gray-700">Studying @</p>
       <Image
@@ -45,10 +45,10 @@ export const Landing: React.FC<LandingProps> = ({}) => {
 
 
 
-  <div className="landingbio flex flex-col justify-center items-center px-8 py-8">
-    <div className="max-w-2xl space-y-4 text-lg leading-relaxed">
+  <div className="landingbio flex flex-col justify-center items-center md:items-start px-2 md:px-8 py-4 md:py-8">
+    <div className="max-w-2xl space-y-4 text-base md:text-lg leading-relaxed">
 
-      <h1 className="text-4xl font-bold mb-4">About Me</h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center md:text-left">About Me</h1>
       <p>My name is Robert Hollander, a 3rd year computer science student. I am currently doing my co-op term with the Ontario Government as a database administrator. Some of my skills and interests include databases, web development, IT Infrastructure, and computer networking. I am also deeply involved in the York University community. As president of "The Computing Students Hub," York's computer science club, I work to support and connect students, and I have enjoyed mentoring peers in hackathons. Outside of academics, I enjoy playing video games, reading manga and comics, cooking, doing DIY projects, and going to the gym.</p>
       
       <p>I grew up in Thornhill, Ontario, a quiet town with a strong sense of community that shaped many of my values. Being raised in an environment where people support one another made me want to build similar communities at York. Developing meaningful relationships and helping fellow students feel included has become a central part of my university experience.</p>

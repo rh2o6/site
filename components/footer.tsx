@@ -17,7 +17,7 @@ export default function Footer() {
         &copy; {currentYear} Robert Hollander.
       </p>
       <p className="text-blue-100 text-sm mt-2">
-        Last Updated Mar. 2026
+        Last Updated Apr. 2026
       </p>
     </div>
 

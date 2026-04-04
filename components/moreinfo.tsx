@@ -5,6 +5,7 @@ interface MoreInfoProps {
   projectDescription: string;
   technologiesUsed?: React.ElementType[];
   howWhyBuilt: string;
+  onClose: () => void;
 }
 
 

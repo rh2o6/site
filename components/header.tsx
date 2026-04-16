@@ -25,6 +25,7 @@ export default function Header() {
                             <li><Link href="/projects" className="hover:text-blue-200">Projects</Link></li>
                             <li><Link href="/goals" className="hover:text-blue-200">Goals</Link></li>
                             <li><Link href="/contact" className="hover:text-blue-200">Contact</Link></li>
+                            <li><Link href="/skills" className="hover:text-blue-200">Skills</Link></li>
                             <li>
                                 <Link 
                                     href="/resume.pdf" 

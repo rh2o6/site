@@ -5,6 +5,8 @@ import Image from 'next/image';
 export const Landing: React.FC<LandingProps> = ({}) => {
     return (
 
+      <div className="landing-wrapper">
+
         <div className="landing grid grid-cols-1 md:grid-cols-2 min-h-screen gap-8 px-4 md:px-8 py-8">
 
             
@@ -64,8 +66,20 @@ export const Landing: React.FC<LandingProps> = ({}) => {
       <p>This quote resonates with me because it reflects the role of sacrifice and struggle in personal growth. Whether in academics, leadership, or life challenges, the message reminds me that difficult moments are not setbacks but opportunities to become stronger, and this perspective shapes my goals and direction today.</p>
     </div>
   </div>
+</div>
+
+<div className="flex justify-center  items-center mt-8 px-4 flex-col">
+
+    <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center">Why Me</h1>
+
+  <video className="w-full max-w-3xl rounded-lg shadow-lg" controls>
+    <source src="/whymecoop2100robert.mp4" type="video/mp4" />
+  </video>
+</div>
+
 
 </div>
+
     );
 };
 

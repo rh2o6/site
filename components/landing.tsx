@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 
+
 export const Landing: React.FC<LandingProps> = ({}) => {
     return (
 
@@ -73,7 +74,7 @@ export const Landing: React.FC<LandingProps> = ({}) => {
     <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center">Why Me</h1>
 
   <video className="w-full max-w-3xl rounded-lg shadow-lg" controls>
-    <source src="/whymecoop2100robert.mp4" type="video/mp4" />
+    <source src="https://ecfyk3ka9kwt5rhs.public.blob.vercel-storage.com/whyme" type="video/mp4" />
   </video>
 </div>
 

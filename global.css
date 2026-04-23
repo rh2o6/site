@@ -188,14 +188,34 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
- 
 
- 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+.nav-link {
+    color: white;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #0df2c5;
+    transform: scale(1.25);
+    text-shadow: 0 0 10px #0df2c5, 
+                 0 0 20px #0df2c5, 
+                 0 0 40px #0df2c5,
+                 0 0 80px #0df2c5;
+}
+/* Background Section */
+
+@keyframes chevronMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 80px; }
+}
+
+.chevron-pattern {
+    background: 
+        linear-gradient(135deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%) -20px 0,
+        linear-gradient(225deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%) -20px 0,
+        linear-gradient(315deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%);
+    background-size: 40px 40px;
+    animation: chevronMove 5s linear infinite;
 }

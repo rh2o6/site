@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-col min-h-screen ${inter.className}`}>
+      <body className={`flex flex-col bg-indigo-50 min-h-screen ${inter.className}`}>
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />

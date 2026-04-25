@@ -2,19 +2,25 @@ import type { Metadata } from 'next'
 import '../global.css'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
+import {Inter, Montserrat } from 'next/font/google';
+
+
+
+
+
 
 export const metadata: Metadata = {
   title: 'Robert Hollander - Portfolio',
-  description: 'COOP 2100',
+  description: 'Null',
 }
 
-import { Inter } from 'next/font/google';
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'], // optional but recommended
-});
 
+
+
+
+const inter = Inter({ subsets: ['latin'] });
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '500'] });
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-col bg-indigo-50 min-h-screen ${inter.className}`}>
+      <body className={`flex flex-col min-h-screen square-pattern ${montserrat.className}`}>
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />

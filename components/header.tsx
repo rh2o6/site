@@ -13,7 +13,7 @@ export default function Header() {
                 <div className="flex justify-between items-center">
                     
                     {/* Logo */}
-                    <Link href="/" className="text-xl md:text-2xl font-bold">
+                    <Link href="/" className="nav-link text-xl md:text-2xl font-bold">
                         Home
                     </Link>
 

@@ -132,7 +132,7 @@ body {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
   :root {
     --background: 0 0% 100%;
@@ -207,15 +207,51 @@ body {
 
 @keyframes chevronMove {
     0% { background-position: 0 0; }
-    100% { background-position: 0 80px; }
+    100% { background-position: 70px 70px; }
 }
 
+
+
 .chevron-pattern {
-    background: 
-        linear-gradient(135deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%) -20px 0,
-        linear-gradient(225deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%) -20px 0,
-        linear-gradient(315deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%),
-        linear-gradient(45deg, rgba(99, 102, 241, 0.06) 25%, transparent 25%);
-    background-size: 40px 40px;
-    animation: chevronMove 5s linear infinite;
+  background-color: #AFC7FB;
+  background:
+    linear-gradient(135deg, #0D3AF230 25%, transparent 25%) -35px 0,
+    linear-gradient(225deg, #0D3AF230 25%, transparent 25%) -35px 0,
+    linear-gradient(315deg, #0D3AF230 25%, transparent 25%),
+    linear-gradient(45deg,  #0D3AF230 25%, transparent 25%);
+  background-size: 70px 70px;
+  animation: chevronMove 6s linear infinite;
+}
+
+
+.square-pattern {
+  background-color: #AFC7FB;
+  background:
+    linear-gradient(#0D3AF230 1px, transparent 1px),
+    linear-gradient(90deg, #0D3AF230 1px, transparent 1px);
+  background-size: 35px 35px;
+  animation: chevronMove 6s linear infinite;
+}
+
+
+.dot-pattern {
+  background-color: #AFC7FB;
+  background:
+    radial-gradient(circle, #0D3AF230 2px, transparent 2.5px);
+  background-size: 30px 30px;
+  animation: chevronMove 6s linear infinite;
+}
+
+
+
+
+@layer components {
+  .logo-grunge-shadow {
+    /* Define a clean, solid offset of 4px.
+       The blur is 0px to make it sharp.
+       We'll use a variable for the color so it's flexible.
+       We default it to the deep blue you liked.
+    */
+    text-shadow: 4px 4px 0px var(--logo-shadow-color, #0316AB);
+  }
 }

@@ -1,62 +1,73 @@
-import React from 'react';
 import Image from 'next/image';
+import { Bodoni_Moda } from 'next/font/google';
+import Link from 'next/link';
+const bodoni = Bodoni_Moda({ 
+  subsets: ['latin'],
+  weight: '900', 
+  style: 'normal' 
+});
 
 
 
-export const Landing: React.FC<LandingProps> = ({}) => {
-    return (
+export default function Landing() {
+  return (
+    <main className="flex min-h-screen items-center justify-center px-6 md:px-12 w-full">
+   
+      <div className="grid w-full max-w-6xl grid-cols-1 md:grid-cols-2 items-center gap-12">
 
-      <div className="landing-wrapper">
+        <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
+          <Image 
+            src="/images/unnamed.png" 
+            alt="Robert Hollander" 
+            fill 
+            className="object-cover" 
+            priority
+          />
+        </div>
 
-        <div className="landing grid grid-cols-1 md:grid-cols-2 min-h-screen gap-8 px-4 md:px-8 py-8">
+        
+        <div className="w-full"> 
+         <h1 className={`mb-4 text-4xl md:text-5xl lg:text-6xl text-[#191B1C] uppercase tracking-tighter ${bodoni.className}`}>
+  Robert Hollander
+</h1>
 
-            
-  <div className="flex justify-center items-center flex-col">
+<div className="max-w-2xl space-y-4">
+  <p className="text-[#191B1C] text-lg leading-relaxed text-pretty">
+    Hey there! My name is Robert, I'm a 3rd year computer science student at <strong>York University</strong>. Currently I am doing a co-op term as a <strong>Database Administrator</strong> at the <strong>Ontario Government</strong>.
+  </p>
 
-  <div className="w-full max-w-sm md:max-w-md">
-    <Image
-      src="/images/unnamed.png"
-      alt="Portfolio"
-      width={400}
-      height={400}
-      className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 object-cover w-full h-auto"
-      priority
-    />
-  </div>
+  <p className="text-[#191B1C] text-lg leading-relaxed text-pretty">
+    I love learning everything about computers and software. In my free time I love working on my projects, helping out my student community, and contributing to open source.
+  </p>
+</div>
+         
+         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+  
+  
+<Link
+              href="/projects"
+              className="text-center rounded-md bg-[#0D3AF2] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#0316AB]"
+            >
+              Check out my work!
+            </Link>
 
-  <div className="mt-4 text-center">
-    <h1 className="text-2xl md:text-3xl font-bold mb-2">Robert Hollander</h1>
-    <p className="text-base md:text-lg text-gray-600">Computer Science Student | Database Administrator | Community Builder</p>
-    <div className="mt-6 flex items-center gap-3 justify-center">
-       <p className="text-sm font-semibold text-gray-700">Studying @</p>
-      <Image
-        src="/images/york.png"
-        alt="York University"
-        width={100}
-        height={100}
-        className="rounded"
-      />
-     
-    </div>
-  </div>
+            <Link
+              href="/professional"
+              className="text-center rounded-md bg-[#E7EFFE] px-6 py-3 font-semibold text-[#0D3AF2] transition-colors hover:bg-[#AFC7FB]"
+            >
+              My past experience
+            </Link>
 
- 
+
 
 
 </div>
 
 
 
-</div>
+        </div>
 
-
-
-
-</div>
-
-    );
-};
-
-export default Landing;
-
-export interface LandingProps {}
+      </div>
+    </main>
+  );
+}

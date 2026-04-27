@@ -4,7 +4,6 @@ import React from 'react';
 interface MoreInfoProps {
   projectDescription: string;
   technologiesUsed?: React.ElementType[];
-  howWhyBuilt: string;
   onClose: () => void;
 }
 
@@ -12,22 +11,38 @@ interface MoreInfoProps {
 
 const MoreInfo: React.FC<MoreInfoProps> = ({
   projectDescription,
-  technologiesUsed,
-  howWhyBuilt,
+  technologiesUsed
 }) => {
   return (
-    <div className="more-info-card bg-white rounded-xl shadow-lg p-6 flex flex-col gap-6 border border-gray-200">
+    
+<div className="
+  more-info-card
+  bg-white
+  rounded-xl
+  shadow-lg
+  p-6
+  flex
+  flex-col
+  gap-6
+  border
+  border-gray-200
+
+  mx-auto
+  w-full
+  max-w-3xl
+">
+
   
-  {/* Project Description */}
-  <section className="more-info-section flex flex-col gap-2">
+
+  <section className="description more-info-section flex flex-col gap-2">
     <h2 className="text-lg font-semibold text-gray-800 border-b border-gray-300 pb-1">
       Project Description
     </h2>
     <p className="text-gray-700">{projectDescription}</p>
   </section>
 
-  {/* Technologies Used */}
-  <section className="more-info-section flex flex-col gap-2">
+
+  <section className="techused more-info-section flex flex-col gap-2">
     <h2 className="text-lg font-semibold text-gray-800 border-b border-gray-300 pb-1">
       Technologies Used
     </h2>
@@ -43,13 +58,7 @@ const MoreInfo: React.FC<MoreInfoProps> = ({
     </div>
   </section>
 
-  {/* How / Why It Was Built */}
-  <section className="more-info-section flex flex-col gap-2">
-    <h2 className="text-lg font-semibold text-gray-800 border-b border-gray-300 pb-1">
-      How / Why It Was Built
-    </h2>
-    <p className="text-gray-700">{howWhyBuilt}</p>
-  </section>
+  
 </div>
   );
 };

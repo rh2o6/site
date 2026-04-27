@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import MoreInfo from './moreinfo';
+import { createPortal } from "react-dom";
 
 interface ProjectCardProps {
     title: string;
@@ -10,7 +11,6 @@ interface ProjectCardProps {
     projectLink?: string; 
     details?: string;
     technologiesUsed?: React.ElementType[];
-    howWhyBuilt?: string; 
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -20,8 +20,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     link,
     projectLink,
     details,
-    technologiesUsed,
-    howWhyBuilt,
+    technologiesUsed
 
 }) => {
     const [isPopupOpen, setPopupOpen] = useState(false);
@@ -29,25 +28,33 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     const moreInfo = details;
 
     return (
-        <div className="bg-blue-600 rounded-lg shadow-md p-6 relative flex flex-col h-full">
-           {image && (
-  <div className="w-full h-48 rounded-lg mb-4 bg-white/10 flex items-center justify-center p-4">
-  <img
-    src={image}
-    alt={title}
-    className="max-w-full max-h-full object-contain rounded-sm" 
-  />
-</div>
+        
+
+<div
+  className="flex flex-col h-full rounded-xl p-6 bg-gradient-to-br from-[#4367F5] to-[#003AF2] shadow-lg shadow-black/20 border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0DF2C5]/20">
+
+
+           
+
+{image && (
+  <div className="mb-4 h-40 flex items-center justify-center overflow-hidden">
+    <img
+      src={image}
+      alt={title}
+      className="max-h-full max-w-full object-contain rounded-lg"
+    />
+  </div>
 )}
+
 
             <div className="flex flex-col flex-1">
                 <div className="mb-4">
-                    <h3 className="text-xl text-white font-semibold mb-2">{title}</h3>
-                    <p className="text-white">{description}</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+                    <p className="text-sm text-[#D6E4FF] leading-relaxed mb-4">{description}</p>
                 </div>
 
                 {(projectUrl || moreInfo) && (
-                    <div className="mt-auto flex flex-wrap items-center gap-4 pt-4">
+                    <div className="mt-auto flex items-center justify-between pt-4">
                         {projectUrl && (
                             <a
                                 href={projectUrl}
@@ -71,18 +78,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 )}
             </div>
 
-            {isPopupOpen && moreInfo && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setPopupOpen(false)}>
-                    <div onClick={(e) => e.stopPropagation()}>
-                        <MoreInfo
-                            projectDescription={details}
-                            technologiesUsed={technologiesUsed ?? []}
-                            howWhyBuilt={howWhyBuilt ?? ""}
-                            onClose={() => setPopupOpen(false)}
-                        />
-                    </div>
-                </div>
-            )}
+            
+{isPopupOpen && moreInfo &&
+  createPortal(
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center
+                 bg-black/60 backdrop-blur-sm"
+      onClick={() => setPopupOpen(false)}
+    >
+      <div onClick={(e) => e.stopPropagation()}>
+        <MoreInfo
+          projectDescription={details}
+          technologiesUsed={technologiesUsed ?? []}
+          onClose={() => setPopupOpen(false)}
+        />
+      </div>
+    </div>,
+    document.body
+  )
+}
+
         </div>
     );
 };

@@ -7,22 +7,8 @@ export default function Projects() {
     return (
         <main>
             <div className="flex flex-col items-center justify-center min-h-screen">
-                <section className="w-full max-w-6xl mb-12">
-                    <h2 className="text-3xl font-bold mb-6 text-center">Course Projects</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <ProjectCard
-                            title="EECS 3421 Final Project - AutoTrader Database Design & Implementation"
-                            description="Group Final Project for EECS4321: Introduction to Database Management Systems"
-                            image="/images/autotrader.jpg"
-                            details="This was the final project for the EECS 3421 course, where we designed and implemented a database for a second-hand car market website called AutoTrader. The project involved creating an ER diagram, designing the database schema, and implementing the database using Microsoft SQL Server. We also tested inputting data and that it followed the necesarry, constraints, and bussines logic. The project was a great opportunity to apply the concepts learned in class to a real-world scenario and gain hands-on experience with database design and implementation."
-                            technologiesUsed={[icon.MicrosoftSQLServer,icon.Azure]}
-                            howWhyBuilt="We had developed a ER Diagram first to help guide us on building the schema. Once we had that,  we hosted a MSSQL Server on Azure so we all had access and could work on it at the same time. After that was done we had transated our Diagrams into tables in the database and started inserting and validating data. Once our database schema conformed to all requiremnts we made a presnetatin and writeup."
-                        />
-                       
-                    </div>
-                </section>
-
-                <section className="w-full max-w-6xl">
+                
+                <section className="pt-20 w-full max-w-6xl">
                     <h2 className="text-3xl font-bold mb-6 text-center">Personal Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <ProjectCard

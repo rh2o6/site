@@ -5,7 +5,11 @@ export default function Skills() {
   return (
     <main>
       <div className="flex flex-col items-center min-h-screen">
-        <h1 className="text-4xl font-bold mb-4 pt-20">Technical Skills</h1>
+
+
+        <h1 className="text-4xl font-bold mb-6 pt-20 text-[#01065A]"> Technical Skills</h1>
+
+
 
        <div className="space-y-4 text-lg leading-relaxed">
   <p>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Bodoni_Moda } from 'next/font/google';
-
+import Link from 'next/link';
 const bodoni = Bodoni_Moda({ 
   subsets: ['latin'],
   weight: '900', 
@@ -43,12 +43,21 @@ export default function Landing() {
          
          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
   
-  <button className="rounded-md bg-[#0D3AF2] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#0316AB]">
-    Check out my work!
-  </button>
-  <button className="rounded-md bg-[#E7EFFE] px-6 py-3 font-semibold text-[#0D3AF2] transition-colors hover:bg-[#AFC7FB]">
-  My past experience
-</button>
+  
+<Link
+              href="/projects"
+              className="text-center rounded-md bg-[#0D3AF2] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#0316AB]"
+            >
+              Check out my work!
+            </Link>
+
+            <Link
+              href="/professional"
+              className="text-center rounded-md bg-[#E7EFFE] px-6 py-3 font-semibold text-[#0D3AF2] transition-colors hover:bg-[#AFC7FB]"
+            >
+              My past experience
+            </Link>
+
 
 
 

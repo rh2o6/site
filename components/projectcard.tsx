@@ -31,7 +31,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         
 
 <div
-  className="flex flex-col h-full rounded-xl p-6 bg-gradient-to-br from-[#4367F5] to-[#003AF2] shadow-lg shadow-black/20 border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0DF2C5]/20">
+  className="flex flex-col h-full rounded-xl p-6 bg-[#AFC7FB] shadow-lg shadow-black/20 border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0D3AF2]/40">
 
 
            
@@ -49,8 +49,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
             <div className="flex flex-col flex-1">
                 <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-                    <p className="text-sm text-[#D6E4FF] leading-relaxed mb-4">{description}</p>
+                    <h3 className="text-xl font-semibold text-black mb-2">{title}</h3>
+                    <p className="text-sm text-[#01065A] leading-relaxed mb-4">{description}</p>
                 </div>
 
                 {(projectUrl || moreInfo) && (
@@ -60,7 +60,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 href={projectUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-white hover:underline"
+                                className="text-[#0D3AF2] hover:underline"
                             >
                                 View Project
                             </a>
@@ -69,7 +69,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         {moreInfo && (
                             <button
                                 onClick={() => setPopupOpen(true)}
-                                className="text-white hover:underline"
+                                className="text-[#0D3AF2] hover:underline"
                             >
                                 View More
                             </button>

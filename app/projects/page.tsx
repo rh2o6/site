@@ -8,7 +8,7 @@ export default function Projects() {
             <div className="flex flex-col items-center justify-center min-h-screen">
                 
                 <section className="pt-20 w-full max-w-6xl">
-                    <h2 className="text-3xl font-bold mb-6 text-center">Personal Projects</h2>
+                    <h2 className="text-4xl font-bold mb-6 text-center">Personal Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <ProjectCard
                             title="Personal Portfolio Website"

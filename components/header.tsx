@@ -21,7 +21,6 @@ export default function Header() {
                             <li><Link href="/professional" className="nav-link">Professional Experience</Link></li>
                             <li><Link href="/ec" className="nav-link">Extracurriculars</Link></li>
                             <li><Link href="/projects" className="nav-link">Projects</Link></li>
-                            <li><Link href="/services" className="nav-link">Services</Link></li>
                             <li><Link href="/skills" className="nav-link">Skills</Link></li>
                             <li><Link href="/contact" className="nav-link">Contact</Link></li>
                             <li>

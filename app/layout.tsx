@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`flex flex-col min-h-screen square-pattern ${montserrat.className}`}>
         <Header />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 mt-6">{children}</div>
         <Footer />
       </body>
     </html>

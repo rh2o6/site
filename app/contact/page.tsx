@@ -6,7 +6,19 @@ export default function Contact() {
   const formRef = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e) => {
+
+    console.log("SERVICE:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+console.log("TEMPLATE:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
+console.log("PUBLIC KEY:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+console.log("FORM:", formRef.current);
+
+
+
     e.preventDefault();
+
+
+
+    
 
 emailjs
   .sendForm(
@@ -16,16 +28,17 @@ emailjs
     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
   )
   .then(
-    () => {
-      alert("Message sent successfully!");
-      e.target.reset();
-    },
-    (error) => {
-      console.error(error);
-      alert("Failed to send message. Please try again.");
-    }
-  );
-  }
+        (result) => {
+          console.log("SUCCESS:", result.status, result.text);
+          alert("Message sent successfully!");
+          formRef.current?.reset();
+        },
+        (error) => {
+          // Unpacks the error response object from EmailJS
+          console.error("EmailJS Error details:", error.status, error.text || error);
+        }
+      );
+  };
 
   return (
 
@@ -33,20 +46,15 @@ emailjs
       <div className="flex min-h-screen flex-col items-center">
         <h1 className="text-4xl font-bold pt-20 pb-20">Contact</h1>
 
-        <div className="space-y-4 text-lg leading-relaxed max-w-2xl mx-auto">
-          <p>
-            You can reach me below for any inquiries, collaborations, or just
-            to say hello! I’m always open to connecting with like-minded
-            individuals and exploring new opportunities.
-          </p>
-        </div>
+      <div className="max-w-2xl mx-auto text-center">
+  <p className="text-lg leading-8 text-muted-foreground">
+    Have a question, an idea, or want to work together?
+    <br />
+    Feel free to reach out! I'm always happy to connect and explore new opportunities.
+  </p>
+</div>
 
-        <p className="pt-20">
-          For business inquiries please reach out via E-Mail:
-        </p>
-        <a href="mailto:business@robertslab.top">
-          business@robertslab.top
-        </a>
+       
 
         <div className="pt-20 contact-box max-w-md w-full">
           <p className="pb-4">
@@ -54,7 +62,7 @@ emailjs
           </p>
 
           
-          <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
+          <form ref={formRef} onSubmit={sendEmail} className="flex flex-col space-y-4 items-center">
             <input
               type="text"
               name="user_name"
@@ -80,7 +88,7 @@ emailjs
 
             <button
               type="submit"
-              className="w-full bg-black text-white p-2 rounded hover:opacity-80"
+              className=" mt-4 text-center rounded-md bg-[#0D3AF2] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#0316AB]"
             >
               Send Message
             </button>

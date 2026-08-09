@@ -44,7 +44,6 @@ export default function Ec() {
           <ExperienceCard
             key={exp.id}
             experience={exp}
-            showViewMore
           />
         ))}
       </div>

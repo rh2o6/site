@@ -49,10 +49,19 @@ export default function Header() {
                 {isOpen && (
                     <nav className="mt-4 md:hidden">
                         <ul className="flex flex-col gap-4 border-t border-na-400 pt-4">
-                            <li><Link href="/professional">Professional Experience</Link></li>
-                            <li><Link href='/skills'>Skills</Link></li>
-                            <li><Link href="/contact">Contact</Link></li>
-                            <li><Link href="/resume"></Link></li>
+                            <li><Link href="/professional" className="nav-link">Professional Experience</Link></li>
+                            <li><Link href="/ec" className="nav-link">Extracurriculars</Link></li>
+                            <li><Link href="/projects" className="nav-link">Projects</Link></li>
+                            <li><Link href="/skills" className="nav-link">Skills</Link></li>
+                            <li><Link href="/contact" className="nav-link">Contact</Link></li>
+                            <li>
+                                <Link 
+                                    href="/resume" 
+                                    className="nav-link"
+                                >
+                                    Resume
+                                </Link>
+                            </li>
 
                             
                             

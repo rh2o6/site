@@ -50,18 +50,12 @@ export default function Header() {
                     <nav className="mt-4 md:hidden">
                         <ul className="flex flex-col gap-4 border-t border-na-400 pt-4">
                             <li><Link href="/professional">Professional Experience</Link></li>
-                            <li><Link href="/services">Services</Link></li>
                             <li><Link href='/skills'>Skills</Link></li>
                             <li><Link href="/contact">Contact</Link></li>
-                            <li>
-                                <Link 
-                                    href="/resume.pdf" 
-                                    target="_blank" 
-                                    download="My_Resume.pdf"
-                                >
-                                    Resume
-                                </Link>
-                            </li>
+                            <li><Link href="/resume"></Link></li>
+
+                            
+                            
                         </ul>
                     </nav>
                 )}

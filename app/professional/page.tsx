@@ -41,7 +41,6 @@ export default function Professional() {
           <ExperienceCard
             key={exp.id}
             experience={exp}
-            showViewMore
           />
         ))}
       </div>

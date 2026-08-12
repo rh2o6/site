@@ -11,7 +11,13 @@ import {Inter, Montserrat } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'Robert Hollander - Portfolio',
-  description: 'Null',
+  description: 'Welcome to my Portfolio :)',
+  icons: {
+    icon: {
+      url: '/images/icons/Nirvana_Face.svg',
+      type: 'image/svg+xml',
+    },
+  },
 }
 
 
